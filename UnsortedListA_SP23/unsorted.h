@@ -12,7 +12,7 @@ public:
 	void MakeEmpty();	//Done
 	bool IsFull();		//Done
 	int GetLength();	//Done
-	ItemType GetItem(ItemType item, bool& found);
+	ItemType GetItem(ItemType item, bool& found);	//Done
 	bool PutItem(ItemType item);
 	bool DeleteItem(ItemType item);
 	void ResetList();	//Done

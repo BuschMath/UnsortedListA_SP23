@@ -30,7 +30,17 @@ int UnsortedType::GetLength()
 
 ItemType UnsortedType::GetItem(ItemType item, bool& found)
 {
-	return ItemType();
+	for (int i = 0; i < listSize; i++)
+	{
+		if (item.ComparedTo(list[i]) == RelationType::EQUAL)
+		{
+			found = true;
+			return list[i];
+		}
+	}
+
+	found = false;
+	return item;
 }
 
 bool UnsortedType::PutItem(ItemType item)
