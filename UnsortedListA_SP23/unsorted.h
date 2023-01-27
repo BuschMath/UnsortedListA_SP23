@@ -6,17 +6,17 @@
 class UnsortedType
 {
 public:
-	UnsortedType();
-	~UnsortedType();
+	UnsortedType();		//Done
+	~UnsortedType();	//Done
 
 	void MakeEmpty();	//Done
 	bool IsFull();		//Done
 	int GetLength();	//Done
 	ItemType GetItem(ItemType item, bool& found);	//Done
-	bool PutItem(ItemType item);
-	bool DeleteItem(ItemType item);
+	bool PutItem(ItemType item);	//Done
+	bool DeleteItem(ItemType item);	//Done
 	void ResetList();	//Done
-	ItemType GetNextItem();
+	ItemType GetNextItem();	//Done
 
 private:
 	ItemType list[Max_Items];

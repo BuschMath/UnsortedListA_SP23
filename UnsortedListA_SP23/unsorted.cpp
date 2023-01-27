@@ -45,11 +45,31 @@ ItemType UnsortedType::GetItem(ItemType item, bool& found)
 
 bool UnsortedType::PutItem(ItemType item)
 {
-	return false;
+	if (!IsFull())
+	{
+		list[listSize] = item;
+		listSize++;
+		return true;
+	}
+	else
+		return false;
 }
 
 bool UnsortedType::DeleteItem(ItemType item)
 {
+	for (int i = 0; i < listSize; i++)
+	{
+		if (item.ComparedTo(list[i]) == RelationType::EQUAL)
+		{
+			for (int j = i; j < listSize - 1; j++)
+			{
+				list[i] = list[i + 1];
+			}
+			listSize--;
+
+			return true;
+		}
+	}
 	return false;
 }
 
@@ -60,5 +80,5 @@ void UnsortedType::ResetList()
 
 ItemType UnsortedType::GetNextItem()
 {
-	return ItemType();
+	return list[loc++];
 }

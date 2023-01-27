@@ -2,13 +2,24 @@
 
 ItemType::ItemType()
 {
+	item = 0;
 }
 
 ItemType::~ItemType()
 {
 }
 
-RelationType ItemType::ComparedTo(ItemType item)
+void ItemType::Print(ostream& Stream)
 {
-	return RelationType();
+	Stream << item;
+}
+
+RelationType ItemType::ComparedTo(ItemType item_)
+{
+	if (item > item_.GetItem())
+		return RelationType::GREATER;
+	else if (item < item_.GetItem())
+		return RelationType::LESS;
+
+	return RelationType::EQUAL;
 }
